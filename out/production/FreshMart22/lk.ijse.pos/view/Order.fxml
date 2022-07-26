@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Context" prefHeight="621.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.Ordercontroller">
+   <children>
+      <ImageView fitHeight="633.0" fitWidth="811.0" layoutX="-8.0" pickOnBounds="true">
+         <image>
+            <Image url="@asserts/Cartws.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblPersonalCare" layoutX="15.0" layoutY="11.0" text="ORDER">
+         <font>
+            <Font name="Cambria Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="61.0" prefHeight="0.0" prefWidth="736.0" style="-fx-background-color: #000000;" />
+      <JFXButton fx:id="btnNew" buttonType="RAISED" layoutX="711.0" layoutY="17.0" onAction="#NewOnAction" onMouseClicked="#OnMouseClicked" prefHeight="32.0" prefWidth="54.0" ripplerFill="WHITE" style="-fx-background-color: #fc0394;" text="+NEW " textFill="WHITE" />
+      <Label fx:id="lblCID" layoutX="49.0" layoutY="77.0" prefHeight="32.0" prefWidth="130.0" text="Customer ID :">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCName" layoutX="236.0" layoutY="77.0" prefHeight="32.0" prefWidth="146.0" text="Customer Name :">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDescription" layoutX="236.0" layoutY="133.0" prefHeight="32.0" prefWidth="161.0" text="Description :">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtDescription" layoutX="236.0" layoutY="163.0" prefHeight="25.0" prefWidth="332.0" promptText="Description" unFocusColor="#170101" />
+      <JFXButton fx:id="btnPlaceOrder" buttonType="RAISED" layoutX="490.0" layoutY="565.0" onAction="#PlaceOrderOnAction" onMouseClicked="#OnMouseClicked" prefHeight="32.0" prefWidth="107.0" ripplerFill="WHITE" style="-fx-background-color: #0d9e75;" text="PLACE ORDER" textFill="WHITE" />
+      <JFXButton fx:id="btnCancel" buttonType="RAISED" layoutX="641.0" layoutY="565.0" onAction="#CancelOnAction" onMouseClicked="#OnMouseClicked" prefHeight="32.0" prefWidth="107.0" ripplerFill="WHITE" style="-fx-background-color: #a80a27;" text="CANCEL" textFill="WHITE" />
+      <JFXTextField fx:id="txtCName" layoutX="236.0" layoutY="100.0" prefHeight="25.0" prefWidth="332.0" promptText="Customer Name" unFocusColor="#170101" />
+      <Label fx:id="lblItemCode" layoutX="48.0" layoutY="133.0" prefHeight="32.0" prefWidth="130.0" text="Item Code :">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="72.0" layoutY="332.0" prefHeight="200.0" prefWidth="652.0">
+         <columns>
+            <TableColumn fx:id="tblItemCode" prefWidth="143.0" text="Item Code" />
+            <TableColumn fx:id="tblDescription" prefWidth="102.0" text="Description" />
+            <TableColumn fx:id="tblQuantity" prefWidth="100.0" text="Quantity" />
+            <TableColumn fx:id="tblUnitPrice" prefWidth="109.0" text="Unit Price" />
+            <TableColumn fx:id="tblDiscount" prefWidth="109.0" text="Discount" />
+            <TableColumn fx:id="tblTotal" prefWidth="89.0" text="Total" />
+         </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#DeleteOnAction" text="Delete" />
+                  <MenuItem mnemonicParsing="false" onAction="#EditOnAction" text="Edit" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <JFXComboBox fx:id="cmbCID" layoutX="49.0" layoutY="100.0" prefHeight="25.0" prefWidth="130.0" promptText="Customer ID" />
+      <JFXComboBox fx:id="cmbItemCode" layoutX="48.0" layoutY="163.0" prefHeight="25.0" prefWidth="130.0" promptText="Item Code" />
+      <Label fx:id="lblQtyOnHand" layoutX="49.0" layoutY="195.0" prefHeight="32.0" prefWidth="130.0" text="Qty On Hand :">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblUnitPrice" layoutX="236.0" layoutY="195.0" prefHeight="32.0" prefWidth="130.0" text="Unit Price :">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDiscount" layoutX="397.0" layoutY="195.0" prefHeight="32.0" prefWidth="130.0" text="Discount :">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtQtyOnHand" layoutX="48.0" layoutY="227.0" prefHeight="25.0" prefWidth="130.0" promptText="QTY Onn Hand" unFocusColor="#170101" />
+      <JFXTextField fx:id="txtUnitPrice" layoutX="236.0" layoutY="227.0" prefHeight="25.0" prefWidth="130.0" promptText="Unit Price" unFocusColor="#170101" />
+      <JFXTextField fx:id="txtDiscount" labelFloat="true" layoutX="397.0" layoutY="227.0" prefHeight="25.0" prefWidth="130.0" promptText="Discount" unFocusColor="#170101" />
+      <Button fx:id="btnCart" layoutX="571.0" layoutY="286.0" mnemonicParsing="false" onAction="#CartOnAction" prefHeight="25.0" prefWidth="121.0" text="Add to Cart" />
+      <Label fx:id="lblTotal" layoutX="34.0" layoutY="570.0" prefHeight="32.0" prefWidth="121.0" text="Total ">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderAdd" layoutX="673.0" layoutY="93.0" prefHeight="32.0" prefWidth="130.0" text="Order ID">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblQuantity" layoutX="567.0" layoutY="199.0" prefHeight="32.0" prefWidth="130.0" text="Quantity :">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtQuantity" labelFloat="true" layoutX="567.0" layoutY="231.0" prefHeight="25.0" prefWidth="130.0" promptText="Quantity" unFocusColor="#170101" />
+   </children>
+</AnchorPane>
